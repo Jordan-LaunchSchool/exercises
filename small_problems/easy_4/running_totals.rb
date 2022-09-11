@@ -1,22 +1,30 @@
-# running_totals.rb
+
 =begin
 => SCRATCH PAD <=
+	- inject method?
+	- transforming the array - use map
+	- 
 
 => PROBLEM <=
-  - write a method that takes an array of numbers
-	- return an array with the same amount of elements
-	- the returned array must have the running total of the element prior to it
+	- write a method that takes an array of numbers
+	- have the array return the same number of elements, with each element 
+	a running total from the original array.
+	
+	Input: 
+		- an array
 
-  Input: array
-
-  Output: array
+  Output: 
+	 	- array
 
   Rules:
     Explicit:
+			- out put array with same number of elements as the input
+			- each preceding element is to be the sum of the previous element prior plus itself
 
 
 
     Implicit:
+			- 
 
 => EXAMPLES <=
 	running_total([2, 5, 13]) == [2, 7, 20]
@@ -28,19 +36,21 @@
 
 
 => ALGORITHM <=
-	- write a method that takes an array
-	- create a running total variable equal to zero
-	- iterate over the array index
-		- make the current iteration the sum of itself plus the running total variable
-	- return the array
+ - define a method that takes an array
+	- create a sum variable equal to zero
+	- iterate over the array, transforming each element into the sum of 
+	itself plus the preceding number. (this first element will be plus zero)
+	- return the transformed array
 
 => CODE <=
-					
+
 =end
 
 def running_total(array)
-	running_total = 0
-	array.map { |element| running_total += element }
+	sum = 0
+	array.map do |element|
+		sum += element
+	end
 end
 
 p running_total([2, 5, 13]) == [2, 7, 20]
