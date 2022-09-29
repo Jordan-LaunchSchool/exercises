@@ -13,16 +13,21 @@
 =end
 
 
-def buy_fruit(shopping_list)
-  result_array = []
+# def buy_fruit(shopping_list)
+#   result_array = []
 
-  shopping_list.each do |nested_array|
-    nested_array[-1].times do
-      result_array << nested_array[0]
-    end
-  end
-  result_array
+#   shopping_list.each do |nested_array|
+#     nested_array[-1].times do
+#       result_array << nested_array[0]
+#     end
+#   end
+#   result_array
+# end
+
+def buy_fruit(list)
+  list.map { |fruit, quantity| [fruit] * quantity }.flatten
 end
+
 
 p buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]]) ==
 ["apples", "apples", "apples", "orange", "bananas","bananas"]
