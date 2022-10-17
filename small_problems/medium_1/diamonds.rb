@@ -23,18 +23,18 @@ def diamond(input_integer)
   rows = Array(1..input_integer)
   rows.delete_if { |number| number.even?}
   white_space = (rows.size - 1)
-  rows.each_with_index do |stars, index|
-    puts (" " * white_space) + ('*' * rows[index])
+  rows.each do |stars|
+    puts (" " * white_space) + ('*' * stars)
     white_space -= 1
   end
 
   white_space = 0
   rows.reverse!.shift
-  rows.each_with_index do |stars, index|
+  rows.each do |stars|
     white_space += 1
-    puts (" " * white_space) + ('*' * rows[index])
+    puts (" " * white_space) + ('*' * stars)
   end
 
 end
 
-diamond(11)
+diamond(3)
